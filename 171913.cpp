@@ -131,10 +131,13 @@ int main(int argc, char** argv)
 	Canny(edges, edges, 50, 150, 3); // canny parameters may need to be optimized 
 	
 	if (showsteps) imshow("edges", edges);
-
+	waitKey(1);
 	vector<Point> selected_points;
 	vector<vector<Point> > contours;
+
+	cout << "1. findcontours\n";
 	findContours(edges, contours, RETR_LIST, CHAIN_APPROX_SIMPLE);
+	cout << "1. findcontours...OK\n";
 
 	for (size_t i = 0; i < contours.size(); i++)
 	{
@@ -152,7 +155,7 @@ int main(int argc, char** argv)
 	}
 	
 	if (showsteps) imshow("Selected contours", src_copy );
-
+	waitKey(1);
 	vector<Point2f> selected_points_f;
 	vector<Point2f> corners;
 	Mat(selected_points).convertTo(selected_points_f, CV_32F);
