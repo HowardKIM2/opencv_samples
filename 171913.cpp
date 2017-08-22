@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 {
 	bool showsteps = true; // set it to false to see only result; 
 	Mat src, src_copy,edges;
-	src = imread(argv[1]);
+	src = imread("e:/test.jpg");
 	src_copy = src.clone();
 
 	cvtColor(src, edges, COLOR_BGR2GRAY);
