@@ -117,7 +117,13 @@ int main(int argc, char** argv)
 {
 	bool showsteps = true; // set it to false to see only result; 
 	Mat src, src_copy,edges;
-	src = imread("e:/test.jpg");
+	//src = imread("c:/test.jpg");
+	if (src.empty())
+	{
+		src = Mat(400, 400, CV_8UC3, Scalar(127, 127, 127));
+		rectangle(src, Rect(20, 200, 150, 50), Scalar(0, 0, 255), 8);
+		rectangle(src, Rect(200, 200, 50, 50), Scalar(0, 0, 255), 8);
+	}
 	src_copy = src.clone();
 
 	cvtColor(src, edges, COLOR_BGR2GRAY);
