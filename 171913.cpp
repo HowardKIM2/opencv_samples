@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 {
 	bool showsteps = true; // set it to false to see only result; 
 	Mat src, src_copy,edges;
-	//src = imread("c:/test.jpg");
+	src = imread(argv[1]);
 	if (src.empty())
 	{
 		src = Mat(400, 400, CV_8UC3, Scalar(127, 127, 127));
